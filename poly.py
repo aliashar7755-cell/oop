@@ -3,23 +3,23 @@ class car:
         self.brand = brand
         self.model = model
 
-        def move(self):
+    def move(self):
             print("Drive!")
 
 class boat:
-   def __init__(self, brand, model):
+    def __init__(self, brand, model):
         self.brand = brand
         self.model = model
 
-   def move(self):
+    def move(self):
             print("Sail!")
 
 class plane:
-   def __init__(self, brand, model):
+    def __init__(self, brand, model):
         self.brand = brand
         self.model = model
 
-   def move(self):
+    def move(self):
             print("Fly!")
 
 car1 = car("Ford", "Mustang")
