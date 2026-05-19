@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | {{ name }}</title>
+    <link rel="stylesheet" href="{% static 'main/styles.css' %}" />
+</head>
+<body>
+    <header class="hero">
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="hero-inner">
+            <p class="eyebrow">Portfolio</p>
+            <h1>{{ name }}</h1>
+            <p class="role">{{ title }}</p>
+            <p class="hero-text">{{ description }}</p>
+            <div class="hero-actions">
+                <a class="button" href="#projects">View Projects</a>
+                <a class="button button-secondary" href="#contact">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section id="about" class="section section-about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>{{ about }}</p>
+            </div>
+        </section>
+
+        <section id="skills" class="section section-skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="chip-list">
+                    {% for skill in skills %}
+                        <span class="chip">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section section-projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="grid">
+                    {% for project in projects %}
+                        <article class="project-card">
+                            <span class="project-number">0{{ forloop.counter }}</span>
+                            <h3>{{ project.name }}</h3>
+                            <p>{{ project.description }}</p>
+                            <a href="{{ project.link }}">Learn more</a>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-contact">
+            <div class="container contact-box">
+                <h2>Contact</h2>
+                <p>{{ contact_message }}</p>
+                <a class="button" href="mailto:{{ contact_email }}">Email Me</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Built locally with Django, HTML, CSS, and JavaScript.</p>
+    </footer>
+
+    <script src="{% static 'main/main.js' %}"></script>
+</body>
+</html>
