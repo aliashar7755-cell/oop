@@ -3,15 +3,15 @@ class person:
         self.firstname = fname
         self.lastname = lname
 
-        def printname(self):
-            print(self.firstnme, self.lastname)
+    def printname(self):
+      print(self.firstname, self.lastname)
 
-            x = person("John", "Doe")
-            x.printname()
+x = person("John", "Doe")
+x.printname()
 
-            class student(person):
-                pass
+class student(person):
+ pass
 
-            x = Student("mike", "Olsen")
-            x.printname()
+x = student("mike", "olsen")
+x.printname()
         
